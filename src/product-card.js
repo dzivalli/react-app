@@ -18,7 +18,7 @@ class ProductCard extends Component {
                width={100}
                height={50}>
         </Image>
-        <TextBox text={product.title}></TextBox>
+        <TextBox>{product.title}</TextBox>
         <Price price={product.price}></Price>
       </div>
     )

@@ -8,7 +8,7 @@ class TextBox extends Component {
   render() {
     return (
       <span>
-        {this.props.text}
+        {this.props.children}
       </span>
     )
   }
