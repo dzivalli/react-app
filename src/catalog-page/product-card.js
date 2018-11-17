@@ -20,6 +20,7 @@ class ProductCard extends Component {
         </Image>
         <TextBox>{product.title}</TextBox>
         <Price price={product.price}></Price>
+        <button className="btn btn-info float-right mt-2">Buy</button>
       </div>
     )
   }
