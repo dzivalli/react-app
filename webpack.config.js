@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/catalog-page.js',
+  entry: './src/index.js',
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist'

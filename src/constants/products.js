@@ -12,7 +12,7 @@ const PRODUCTS = [
     imageUrl: "https://pngimg.com/uploads/orange/orange_PNG800.png"
   },
   {
-    id: 3,
+    id: 2,
     title: "Baz",
     price: 30,
     imageUrl: "https://pngimg.com/uploads/orange/orange_PNG800.png"
