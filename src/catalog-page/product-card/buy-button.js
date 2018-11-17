@@ -7,14 +7,14 @@ class BuyButton extends React.Component {
   }
 
   render() {
-    const { productId } = this.props;
+    const { productId, amount } = this.props;
 
     return (
       <CartContext.Consumer>
         {
           ({ addProduct }) => (
             <button className="btn btn-info float-right mt-2"
-                    onClick={() => addProduct(productId)}>
+                    onClick={() => addProduct(productId, amount)}>
               Buy
             </button>
           )

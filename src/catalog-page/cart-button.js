@@ -11,8 +11,8 @@ class CartButton extends React.Component {
     return (
       <CartContext.Consumer>
         {
-          ({ productIds }) => {
-            return (<button className="btn btn-primary float-right">Checkout ({productIds.length})</button>)
+          ({ productsInCart }) => {
+            return (<button className="btn btn-primary float-right">Checkout ({productsInCart.length})</button>)
           }
         }
       </CartContext.Consumer>

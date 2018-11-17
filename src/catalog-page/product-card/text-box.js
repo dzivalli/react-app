@@ -7,7 +7,7 @@ class TextBox extends Component {
 
   render() {
     return (
-      <div>
+      <div className="my-2">
         <strong>Title: </strong>{this.props.children}
       </div>
     )

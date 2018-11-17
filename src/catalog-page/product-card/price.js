@@ -7,7 +7,7 @@ class Price extends Component {
 
   render() {
     return (
-      <div>
+      <div className="my-2">
         <strong>Price: </strong>{this.props.price} RUB
       </div>
     )

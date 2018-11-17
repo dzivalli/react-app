@@ -9,23 +9,23 @@ class CatalogPage extends Component {
     super(props);
 
     this.state = {
-      productIds: []
+      productsInCart: []
     };
 
     this.addProduct = this.addProduct.bind(this);
   }
 
-  addProduct(productId) {
-    let productIds = this.state.productIds.slice(0);
-    productIds.push(productId);
+  addProduct(productId, amount) {
+    let productsInCart = this.state.productsInCart.slice(0);
+    productsInCart.push({id: productId, amount: amount});
 
-    this.setState({ productIds });
+    this.setState({ productsInCart });
   }
 
   render() {
     return (
       <CartContext.Provider value={{
-        productIds: this.state.productIds,
+        productsInCart: this.state.productsInCart,
         addProduct: this.addProduct
       }}>
         <div className="container">
