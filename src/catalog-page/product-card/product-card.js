@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Price from "./price";
 import TextBox from "./text-box";
 import Image from "./image";
+import BuyButton from "./buy-button"
 
 class ProductCard extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class ProductCard extends Component {
         </Image>
         <TextBox>{product.title}</TextBox>
         <Price price={product.price}></Price>
-        <button className="btn btn-info float-right mt-2">Buy</button>
+        <BuyButton productId={product.id}/>
       </div>
     )
   }
