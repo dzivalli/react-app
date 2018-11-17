@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class TextBox extends Component {
   constructor(props) {
@@ -7,9 +7,9 @@ class TextBox extends Component {
 
   render() {
     return (
-      <span>
-        {this.props.children}
-      </span>
+      <div>
+        <strong>Title: </strong>{this.props.children}
+      </div>
     )
   }
 }

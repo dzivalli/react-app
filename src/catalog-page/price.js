@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Price extends Component {
   constructor(props) {
@@ -7,9 +7,9 @@ class Price extends Component {
 
   render() {
     return (
-      <span>
-        {this.props.price} RUB
-      </span>
+      <div>
+        <strong>Price: </strong>{this.props.price} RUB
+      </div>
     )
   }
 }

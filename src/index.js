@@ -1,8 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import CatalogPage from './catalog-page';
-import { Products } from './constants/products';
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import CatalogPage from "./catalog-page/catalog-page";
+import { Products } from "./constants/products";
 
 class App extends React.Component {
   render() {
@@ -14,5 +16,5 @@ class App extends React.Component {
 
 ReactDOM.render(
   <App />,
-  document.getElementById('root')
+  document.getElementById("root")
 );

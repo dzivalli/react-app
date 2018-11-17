@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Catalog from './catalog';
+import Catalog from "./catalog";
 
 class CatalogPage extends Component {
   constructor(props) {

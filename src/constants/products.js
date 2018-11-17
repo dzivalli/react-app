@@ -1,21 +1,21 @@
 const PRODUCTS = [
   {
     id: 0,
-    title: 'Foo',
+    title: "Foo",
     price: 10,
-    imageUrl: 'https://pngimg.com/uploads/orange/orange_PNG800.png'
+    imageUrl: "https://pngimg.com/uploads/orange/orange_PNG800.png"
   },
   {
     id: 1,
-    title: 'Bar',
+    title: "Bar",
     price: 20,
-    imageUrl: 'https://pngimg.com/uploads/orange/orange_PNG800.png'
+    imageUrl: "https://pngimg.com/uploads/orange/orange_PNG800.png"
   },
   {
     id: 3,
-    title: 'Baz',
+    title: "Baz",
     price: 30,
-    imageUrl: 'https://pngimg.com/uploads/orange/orange_PNG800.png'
+    imageUrl: "https://pngimg.com/uploads/orange/orange_PNG800.png"
   }
 ];
 
