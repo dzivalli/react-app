@@ -9,7 +9,12 @@ class CatalogPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
+        <div className="row my-3">
+          <div className="col">
+            <button className="btn btn-primary float-right">Checkout</button>
+          </div>
+        </div>
         <Catalog products={this.props.products}></Catalog>
       </div>
     )
