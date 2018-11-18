@@ -7,12 +7,27 @@ class CartButton extends React.Component {
     super(props);
   }
 
+  onDragOver(e) {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <CartContext.Consumer>
         {
-          ({ productsInCart }) => {
-            return (<button className="btn btn-primary float-right">Checkout ({productsInCart.length})</button>)
+          ({ productsInCart, addProduct }) => {
+            return (
+              <button className="btn btn-primary float-right"
+                      onDrop={(e) => {
+                        e.preventDefault();
+
+                        let product = JSON.parse(e.dataTransfer.getData("text"));
+                        addProduct(product);
+                      }}
+                      onDragOver={this.onDragOver}>
+                Checkout ({productsInCart.length})
+              </button>
+            )
           }
         }
       </CartContext.Consumer>

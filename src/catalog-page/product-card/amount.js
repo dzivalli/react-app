@@ -8,7 +8,7 @@ class Amount extends React.Component {
   }
 
   onAmountChange(e) {
-    const amount = parseInt(e.target.value) || 1;
+    const amount = parseInt(e.target.value);
 
     this.props.changeAmount(amount);
   }
@@ -19,7 +19,7 @@ class Amount extends React.Component {
         <label>
           <strong>Amount: </strong>
           <input type="number"
-                 onChange={this.onAmountChange}/>
+                 onChange={this.onAmountChange} />
         </label>
       </div>
     )

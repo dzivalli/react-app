@@ -7,14 +7,15 @@ class BuyButton extends React.Component {
   }
 
   render() {
-    const { productId, amount } = this.props;
+    const { product } = this.props;
 
     return (
       <CartContext.Consumer>
         {
           ({ addProduct }) => (
             <button className="btn btn-info float-right mt-2"
-                    onClick={() => addProduct(productId, amount)}>
+                    onClick={() => addProduct(product)}
+                    disabled={!product.amount}>
               Buy
             </button>
           )

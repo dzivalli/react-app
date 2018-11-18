@@ -15,10 +15,20 @@ class ProductCard extends Component {
     };
 
     this.changeAmount = this.changeAmount.bind(this);
+    this.onProductCardDragStart = this.onProductCardDragStart.bind(this);
   }
 
   changeAmount(amount) {
     this.setState({ amount })
+  }
+
+  onProductCardDragStart(e) {
+    const product =
+      {
+        id: this.props.product.id,
+        amount: this.state.amount
+      };
+    e.dataTransfer.setData("text",  JSON.stringify(product));
   }
 
   render() {
@@ -26,16 +36,20 @@ class ProductCard extends Component {
     let { amount } = this.state;
 
     return (
-      <div className="m-3 border float-left p-3">
+      <div className="m-3 border float-left p-3"
+           onDragStart={this.onProductCardDragStart}
+           draggable>
         <Image src={product.imageUrl}
                alt={product.title}
                width={100}
                height={60} />
         <TextBox>{product.title}</TextBox>
         <Price price={product.price} />
-        <Amount changeAmount={this.changeAmount}/>
-        <BuyButton productId={product.id}
-                   amount={amount} />
+        <Amount changeAmount={this.changeAmount} />
+        <BuyButton product={{
+          id: product.id,
+          amount: amount
+        }} />
       </div>
     )
   }
