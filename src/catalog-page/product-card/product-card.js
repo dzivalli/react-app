@@ -3,8 +3,7 @@ import React, { Component } from "react";
 import Price from "./price";
 import TextBox from "./text-box";
 import Image from "./image";
-import BuyButton from "./buy-button"
-import Amount from "./amount"
+import BuyBlock from "./buy-block"
 
 class ProductCard extends Component {
   constructor(props) {
@@ -45,11 +44,11 @@ class ProductCard extends Component {
                height={60} />
         <TextBox>{product.title}</TextBox>
         <Price price={product.price} />
-        <Amount changeAmount={this.changeAmount} />
-        <BuyButton product={{
-          id: product.id,
-          amount: amount
-        }} />
+        <BuyBlock changeAmount={this.changeAmount}
+                  product={{
+                     id: product.id,
+                     amount: amount
+                   }} />
       </div>
     )
   }
