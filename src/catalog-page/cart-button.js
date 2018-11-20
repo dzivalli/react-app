@@ -11,6 +11,13 @@ class CartButton extends React.Component {
     e.preventDefault();
   }
 
+  onProductDrop(e, addProductCallback) {
+    e.preventDefault();
+
+    let product = JSON.parse(e.dataTransfer.getData("text"));
+    addProductCallback(product);
+  }
+
   render() {
     return (
       <CartContext.Consumer>
@@ -18,12 +25,7 @@ class CartButton extends React.Component {
           ({ productsInCart, addProduct }) => {
             return (
               <button className="btn btn-primary float-right"
-                      onDrop={(e) => {
-                        e.preventDefault();
-
-                        let product = JSON.parse(e.dataTransfer.getData("text"));
-                        addProduct(product);
-                      }}
+                      onDrop={(e) => this.onProductDrop(e, addProduct) }
                       onDragOver={this.onDragOver}>
                 Checkout ({productsInCart.length})
               </button>
