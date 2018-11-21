@@ -9,30 +9,16 @@ class ProductCard extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      amount: 0
-    };
-
-    this.changeAmount = this.changeAmount.bind(this);
     this.onProductCardDragStart = this.onProductCardDragStart.bind(this);
   }
 
-  changeAmount(amount) {
-    this.setState({ amount })
-  }
-
   onProductCardDragStart(e) {
-    const product =
-      {
-        id: this.props.product.id,
-        amount: this.state.amount
-      };
-    e.dataTransfer.setData("text",  JSON.stringify(product));
+    const { id } = this.props.product;
+    e.dataTransfer.setData("text",  JSON.stringify(id));
   }
 
   render() {
     const product = this.props.product;
-    let { amount } = this.state;
 
     return (
       <div className="m-3 border float-left p-3"
@@ -44,11 +30,7 @@ class ProductCard extends Component {
                height={60} />
         <TextBox>{product.title}</TextBox>
         <Price price={product.price} />
-        <BuyBlock changeAmount={this.changeAmount}
-                  product={{
-                     id: product.id,
-                     amount: amount
-                   }} />
+        <BuyBlock productId={product.id} />
       </div>
     )
   }

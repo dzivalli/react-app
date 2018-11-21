@@ -5,17 +5,20 @@ class BuyBlock extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      amount: 0
+    };
+
     this.onAmountChange = this.onAmountChange.bind(this);
   }
 
   onAmountChange(e) {
-    const amount = parseInt(e.target.value);
-
-    this.props.changeAmount(amount);
+    this.setState({ amount: parseInt(e.target.value) })
   }
 
   render() {
-    const { product } = this.props;
+    const { amount } = this.state;
+    const { productId } = this.props;
 
     return (
       <CartContext.Consumer>
@@ -25,8 +28,8 @@ class BuyBlock extends React.Component {
               <input type="number"
                      onChange={this.onAmountChange} />
               <button className="btn btn-info float-right ml-1"
-                      onClick={() => addProduct(product)}
-                      disabled={!product.amount}>
+                      onClick={() => addProduct(productId, amount)}
+                      disabled={!amount}>
                 Buy
               </button>
             </div>

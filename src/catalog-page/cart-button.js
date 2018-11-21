@@ -14,8 +14,8 @@ class CartButton extends React.Component {
   onProductDrop(e, addProductCallback) {
     e.preventDefault();
 
-    let product = JSON.parse(e.dataTransfer.getData("text"));
-    addProductCallback(product);
+    const id = JSON.parse(e.dataTransfer.getData("text"));
+    addProductCallback(id);
   }
 
   render() {

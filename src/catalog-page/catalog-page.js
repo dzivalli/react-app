@@ -15,10 +15,10 @@ class CatalogPage extends Component {
     this.addProduct = this.addProduct.bind(this);
   }
 
-  addProduct(product) {
-    let productsInCart = this.state.productsInCart.slice(0);
-    productsInCart.push(product);
+  addProduct(id, amount = 1) {
+    const productsInCart = this.state.productsInCart.slice(0);
 
+    productsInCart.push({ id, amount });
     this.setState({ productsInCart });
   }
 
