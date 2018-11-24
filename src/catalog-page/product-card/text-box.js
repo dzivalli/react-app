@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 
-class Price extends Component {
+class TextBox extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <div>
-        <strong>Price: </strong>{this.props.price} RUB
+      <div className="my-2">
+        <strong>Title: </strong>{this.props.children}
       </div>
     )
   }
 }
 
-export default Price;
+export default TextBox;
