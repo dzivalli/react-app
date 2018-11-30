@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Price from "./price";
 import TextBox from "./text-box";
@@ -27,14 +27,14 @@ class ProductCard extends Component {
       <div className="m-3 border float-left p-3"
            onDragStart={this.onProductCardDragStart}
            draggable>
-        <NavLink to={productPath(product.id)}>
+        <Link to={productPath(product.id)}>
           <Image src={product.imageUrl}
                  alt={product.title}
                  width={100}
                  height={60} />
           <TextBox>{product.title}</TextBox>
           <Price price={product.price} />
-        </NavLink>
+        </Link>
         <BuyBlock productId={product.id} />
       </div>
     )

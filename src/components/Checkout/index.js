@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import CartContext from "Src/contexts/cart-context"
 import { cartPath } from "Src/helpers/routes";
@@ -25,12 +25,12 @@ class Checkout extends React.Component {
       <CartContext.Consumer>
         {
           ({ productsInCart, addProduct }) => (
-            <NavLink className="nav-link btn btn-success"
+            <Link className="nav-link btn btn-success"
                      onDrop={(e) => this.onProductDrop(e, addProduct) }
                      onDragOver={this.onDragOver}
                      to={cartPath()}>
               Checkout ({productsInCart.length})
-            </NavLink>
+            </Link>
           )
         }
       </CartContext.Consumer>
