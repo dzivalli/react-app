@@ -1,10 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 
-import Catalog from "./catalog";
-import CartContext from "./cart-context";
-import CartButton from "./cart-button";
+import CartContext from "Src/contexts/cart-context";
 
-class CatalogPage extends Component {
+class CartContainer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -28,17 +26,10 @@ class CatalogPage extends Component {
         productsInCart: this.state.productsInCart,
         addProduct: this.addProduct
       }}>
-        <div className="container">
-          <div className="row my-3">
-            <div className="col">
-              <CartButton />
-            </div>
-          </div>
-          <Catalog products={this.props.products}></Catalog>
-        </div>
+        {this.props.children}
       </CartContext.Provider>
     )
   }
 }
 
-export default CatalogPage;
+export default CartContainer;

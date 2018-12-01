@@ -1,18 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import CatalogPage from "./catalog-page/catalog-page";
-import { Products } from "./constants/products";
+import routes from "./routes"
+import Menu from "Src/components/Menu"
+import CartContainer from "Src/components/CartContainer"
 
-class App extends React.Component {
-  render() {
-    return (
-      <CatalogPage products={Products}></CatalogPage>
-    );
-  }
-}
+const App = () => (
+  <CartContainer>
+    <Router>
+      <div className="container">
+        <Menu />
+        <Switch>
+          {
+            routes.map((route, index) => (
+              <Route {...route} key={index} />
+            ))
+          }
+        </Switch>
+      </div>
+    </Router>
+  </CartContainer>
+);
 
 ReactDOM.render(
   <App />,

@@ -19,4 +19,4 @@ const PRODUCTS = [
   }
 ];
 
-export { PRODUCTS as Products };
+export { PRODUCTS as ProductsAPI };

@@ -31,5 +31,10 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       }
     ]
+  },
+  resolve: {
+    alias: {
+      Src: path.resolve(__dirname, 'src/'),
+    }
   }
 };

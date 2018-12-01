@@ -1,5 +1,5 @@
 import React from "react";
-import CartContext from "../cart-context"
+import CartContext from "Src/contexts/cart-context"
 
 class BuyBlock extends React.Component {
   constructor(props) {
